@@ -1,0 +1,17 @@
+database:
+  active: dev
+  application:
+    dev:
+      dialect: sqlite
+      driver:
+      server: 
+      port:
+      database: ./rest_rec.db
+      username: root
+      password: root
+      show-sql: false
+
+security:
+  jwt:
+    secret-key: faithtax # JWT secret ket
+    expiration: 3 # days
