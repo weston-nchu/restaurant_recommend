@@ -3,9 +3,11 @@ from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from pyfk import get_logger, create_table
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from routers import *
 from contextlib import asynccontextmanager
 from library.dao import *
+from routers import *
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -29,10 +31,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# app.include_router(register_router.router)
+app.mount("/assets", StaticFiles(directory="resources/frontend/assets"), name="assets")
 
-# app.add_middleware(LotCompleteMiddleware)
-
+app.include_router(index_router)
+app.include_router(learning_router)
 
 @app.exception_handler(Exception)
 def app_exception_handler(request: Request, error: Exception):

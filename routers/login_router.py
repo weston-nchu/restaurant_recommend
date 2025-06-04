@@ -7,7 +7,7 @@ router = APIRouter(
     tags=["login"]
 )
 
-template = Jinja2Templates(directory="templates")
+template = Jinja2Templates(directory="/resources/frontend")
 
 @router.get("/index", response_class=HTMLResponse, description="登入畫面")
 async def index(request: Request):
