@@ -10,80 +10,103 @@
         <link rel="stylesheet" href="/assets/css/Restaurant.css">
         <link rel="stylesheet" href="/assets/css/owl-carousel.css">
         <link rel="stylesheet" href="/assets/css/lightbox.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     </head>
     <body>
-        <header class="header-area header-sticky">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <nav class="main-nav">
-                            <!-- ***** Logo Start ***** -->
-                            <a href="/index" class="logo">
-                                <img src="/assets/images/michelin.png">
-                            </a>
-                            <!-- ***** Logo End ***** -->
-                            <!-- ***** Menu Start ***** -->
-                            <ul class="nav">
-                                <li class="scroll-to-section"><a href="/index" class="active">Home</a></li>
-                                   
-                            <!-- 
-                                <li class="submenu">
-                                    <a href="javascript:;">Drop Down</a>
-                                    <ul>
-                                        <li><a href="#">Drop Down Page 1</a></li>
-                                        <li><a href="#">Drop Down Page 2</a></li>
-                                        <li><a href="#">Drop Down Page 3</a></li>
-                                    </ul>
-                                </li>
-                            
-                                <li class="scroll-to-section"><a href="#menu">Menu</a></li>
-                                <li class="scroll-to-section"><a href="#chefs">Chefs</a></li> 
-                                <li class="submenu">
-                                    <a href="javascript:;">Features</a>
-                                    <ul>
-                                        <li><a href="#">Features Page 1</a></li>
-                                        <li><a href="#">Features Page 2</a></li>
-                                        <li><a href="#">Features Page 3</a></li>
-                                        <li><a href="#">Features Page 4</a></li>
-                                    </ul>
-                                </li>-->
-                                <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
-                            </ul>        
-                            <a class='menu-trigger'>
-                                <span>Menu</span>
-                            </a>
-                            <!-- ***** Menu End ***** -->
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
-    
-        <section class="section" id="chefs">
-            <div class="container">
-                <div class="row">
-                    <div class="col text-center">
-                        <div class="section-heading">
-                            <h2>Which restaurant do you prefer?</h2>
-                            <h2>Make your desicion!</h2>
+        <div style="min-height: 100px;">
+            <header class="header-area header-sticky">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav class="main-nav">
+                                <!-- ***** Logo Start ***** -->
+                                <a href="/index" class="logo">
+                                    <img src="/assets/images/michelin.png">
+                                </a>
+                                <!-- ***** Logo End ***** -->
+                                <!-- ***** Menu Start ***** -->
+                                <ul class="nav">
+                                    <li class="scroll-to-section"><a href="/index" class="active">Home</a></li>
+                                       
+                                <!-- 
+                                    <li class="submenu">
+                                        <a href="javascript:;">Drop Down</a>
+                                        <ul>
+                                            <li><a href="#">Drop Down Page 1</a></li>
+                                            <li><a href="#">Drop Down Page 2</a></li>
+                                            <li><a href="#">Drop Down Page 3</a></li>
+                                        </ul>
+                                    </li>
+                                
+                                    <li class="scroll-to-section"><a href="#menu">Menu</a></li>
+                                    <li class="scroll-to-section"><a href="#chefs">Chefs</a></li> 
+                                    <li class="submenu">
+                                        <a href="javascript:;">Features</a>
+                                        <ul>
+                                            <li><a href="#">Features Page 1</a></li>
+                                            <li><a href="#">Features Page 2</a></li>
+                                            <li><a href="#">Features Page 3</a></li>
+                                            <li><a href="#">Features Page 4</a></li>
+                                        </ul>
+                                    </li>-->
+                                    <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
+                                </ul>        
+                                <a class='menu-trigger'>
+                                    <span>Menu</span>
+                                </a>
+                                <!-- ***** Menu End ***** -->
+                            </nav>
                         </div>
                     </div>
                 </div>
+            </header>
+        </div>
+        
+        <div class="row">
+            <div class="col-6">
+                <div class="container">
+                    <div class="search-bar">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Restaurant name, style..." aria-label="Search" aria-describedby="search-addon">
+                            <button class="btn btn-outline-secondary" type="button" id="search-addon">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="container py-3" style="margin-right: 260px;margin-top: 10px;">
+                    <div class="row">
+                        <div class="col-auto">
+                            <span class="suggestion-tag">#Most viewed</span>
+                        </div>
+                        <div class="col-auto">
+                            <span class="suggestion-tag">#Japanese food</span>
+                        </div>
+                        <div class="col-auto">
+                            <span class="suggestion-tag">#Taiwanese food</span>
+                        </div>
+                        <div class="col-auto">
+                            <span class="suggestion-tag">#Comfortable</span>
+                        </div>
+                        <div class="col-auto">
+                            <span class="suggestion-tag">#Recommend</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section" id="chefs">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="chef-item">
                             <div class="thumb">
-                                <div class="overlay">
-                                    <h5>I like this more!</h5>
-                                    <!-- <button type="submit" id="form-submit" onclick = "doubleCheck();" class="main-button-icon">I like this more.</button>-->
-                                </div> 
-                                
-                                <!-- <ul class="social-icons">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google"></i></a></li> 
-                                </ul>-->
-                                <!-- <img src="/assets/images/FleurdeSel.png" alt="Chef #2">-->
                                 <div class="main-banner header-text">
                                     <div class="Modern-Slider">
                                       <div class="item">
@@ -116,10 +139,6 @@
                     <div class="col-lg-4">
                         <div class="chef-item">
                             <div class="thumb">
-                                <div class="overlay">
-                                    <h5>I like this more!</h5>
-                                    <!-- <button type="submit" id="form-submit" onclick = "doubleCheck();" class="main-button-icon">I like this more.</button>-->
-                                </div> 
                                 <div class="main-banner header-text">
                                     <div class="Modern-Slider">
                                       <!-- Item -->
@@ -156,11 +175,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="chef-item">
-                            <div class="thumb">
-                                <div class="overlay">
-                                    <h5>I like this more!</h5>
-                                    <!-- <button type="submit" id="form-submit" onclick = "doubleCheck();" class="main-button-icon">I like this more.</button>-->
-                                </div> 
+                            <div class="thumb"> 
                                 <div class="main-banner header-text">
                                     <div class="Modern-Slider">
                                       <div class="item">
