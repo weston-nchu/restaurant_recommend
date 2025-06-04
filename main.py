@@ -35,6 +35,7 @@ app.mount("/assets", StaticFiles(directory="resources/frontend/assets"), name="a
 
 app.include_router(index_router)
 app.include_router(learning_router)
+app.include_router(search_router)
 
 @app.exception_handler(Exception)
 def app_exception_handler(request: Request, error: Exception):
