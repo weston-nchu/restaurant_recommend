@@ -71,7 +71,7 @@ pure_eval==0.2.3
 pycparser==2.22
 pydantic==2.7.4
 pydantic_core==2.18.4
-pyfk @ file:///Users/weston.lin/Documents/work_space/nchu/%E6%B7%B1%E5%BA%A6%E5%BC%B7%E5%8C%96%E5%AD%B8%E7%BF%92/restaurant_recommend/whl/pyfk-1.6.3-py3-none-any.whl
+./whl/pyfk-1.6.3-py3-none-any.whl
 Pygments==2.13.0
 PyJWT==2.8.0
 python-dateutil==2.9.0.post0
