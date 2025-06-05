@@ -27,7 +27,7 @@ class Restaurant(AbstractTable):
 
     img5 = Column(String(length=200), nullable=True)
 
-    tags = relationship("RestaurantTags", cascade="all")
+    tags = relationship("RestaurantTags", cascade="all", lazy="joined")
 
     def __init__(self, name: str, code: str, desc: str, address: str, url: str,
             img1: str, img2: str, img3: str, img4: str, img5: str,  lm_user="system"):
@@ -64,3 +64,27 @@ class Restaurant(AbstractTable):
     
     def __img_id_to_url(self, img_id: str):
         return f"https://axwwgrkdco.cloudimg.io/v7/__gmpics3__/{img_id}?w=224&h=224&org_if_sml=1"
+    
+    def get_tag_list(self) -> List[str]:
+        tags = self.tags[0]
+
+        result = []
+        if tags.restaurant_style:
+            result.append(tags.restaurant_style)
+        
+        if tags.restaurant_type:
+            result.append(tags.restaurant_type)
+        
+        if tags.occasion:
+            result.append(tags.occasion)
+
+        if tags.cuisine_style:
+            result.append(tags.cuisine_style)
+        
+        if tags.atmosphere:
+            result.append(tags.atmosphere)
+        
+        if tags.special:
+            result.append(tags.special)
+            
+        return result

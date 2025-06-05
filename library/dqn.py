@@ -37,6 +37,17 @@ TAG_COLUMN_MAP = {
     '氛圍_聚餐': 'Group Meal Friendly', '氛圍_舒適': 'Cozy Atmosphere'
 }
 
+TAG_COLUMN_MAP_ENG = {
+    '種類_中': 'Chinese', '種類_日': 'Japanese', '種類_法': 'French', '種類_泰': 'Thai',
+    '種類_美': 'American', '種類_西': 'Western', '種類_韓': 'Korean',
+    '類型_咖啡': 'Coffee Shop', '類型_地方': 'Local Cuisine', '類型_小吃': 'Snack Bar', '類型_居酒': 'Izakaya',
+    '類型_火鍋': 'Hot Pot', '類型_甜點': 'Dessert', '類型_聚餐': 'Gathering Place', '類型_茶館': 'Tea House',
+    '類型_酒吧': 'Bar', '類型_餐酒': 'Bistro',
+    '氛圍_安靜': 'Quiet Atmosphere', '氛圍_家庭': 'Family Friendly', '氛圍_時尚': 'Fashionable',
+    '氛圍_浪漫': 'Romantic', '氛圍_熱鬧': 'Lively', '氛圍_約會': 'Dating Spot',
+    '氛圍_聚餐': 'Group Meal Friendly', '氛圍_舒適': 'Cozy Atmosphere'
+}
+
 ALL_POSSIBLE_TAGS = sorted(list(TAG_COLUMN_MAP.values())) # Used for DQN state vector
 TAG_TO_INDEX = {tag: i for i, tag in enumerate(ALL_POSSIBLE_TAGS)} # For DQN state
 INDEX_TO_TAG = {i: tag for tag, i in TAG_TO_INDEX.items()} # For DQN state
@@ -395,8 +406,9 @@ def create_user_profile_csv(agent, aa_csv_tag_bool_columns, aa_csv_ordered_reada
         user_profile_data[col_name] = 0.0
 
     for bool_col_name, readable_tag_name in zip(aa_csv_tag_bool_columns, aa_csv_ordered_readable_tags):
-        if readable_tag_name in learned_tag_weights_dict:
-            user_profile_data[bool_col_name] = learned_tag_weights_dict[readable_tag_name]
+        tag_eng = TAG_COLUMN_MAP_ENG[readable_tag_name]
+        if tag_eng in learned_tag_weights_dict:
+            user_profile_data[bool_col_name] = learned_tag_weights_dict[tag_eng]
 
     df_user = pd.DataFrame([user_profile_data], columns=aa_csv_tag_bool_columns)
 
@@ -695,7 +707,8 @@ def get_recommendations_json(selected_tags_for_user_profile_short):
     # Build a list of just the 'name' (Chinese name) strings
     recommended_names = [row_data['name'] for _, row_data in restaurants_to_display_df.iterrows()]
 
-    return json.dumps(recommended_names, ensure_ascii=False, indent=2) # Output list of strings
+    # return json.dumps(recommended_names, ensure_ascii=False, indent=2) # Output list of strings
+    return recommended_names
 
 # --- Main execution block for simulation ---
 # if __name__ == "__main__":

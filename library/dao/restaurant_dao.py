@@ -11,3 +11,6 @@ class RestaurantDao(CrudSql[Restaurant]):
 
     def query_code_by_uid_list(self, uid_list: List[str]) -> List[str]:
         return [obj[0] for obj in self.db.query(Restaurant.code).filter(Restaurant.uid.in_(uid_list)).all()]
+    
+    def query_restr_by_codes(self, codes: List[str]) -> List[Restaurant]:
+        return self.db.query(Restaurant).filter(Restaurant.code.in_(codes)).all()

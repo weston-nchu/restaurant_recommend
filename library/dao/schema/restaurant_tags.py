@@ -1,3 +1,4 @@
+from typing import List
 from pyfk import AbstractTable
 from sqlalchemy import *
 

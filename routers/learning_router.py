@@ -16,7 +16,7 @@ template = Jinja2Templates(directory="resources/frontend")
 async def index(request: Request):
     return template.TemplateResponse(request, "HabitLearning.html")
 
-@router.get("/restaurant", description="取得3筆餐廳資料")
+@router.get("/restaurant", description="取得5筆餐廳資料")
 async def restaurant():
     restr_codes_batch = dqn.start()
     dao = RestaurantDao()
