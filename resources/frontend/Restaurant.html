@@ -79,7 +79,7 @@
 
         <div class="row">
             <div class="col">
-                <div class="container py-3" style="margin-right: 260px;margin-top: 10px;">
+                <div id = "recommendTag" container py-3" style="margin-right: 260px;margin-top: 10px;">
                     <div class="row">
                         <div class="col-auto">
                             <span class="suggestion-tag">#Most viewed</span>
@@ -102,109 +102,8 @@
         </div>
 
         <section class="section" id="chefs">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="chef-item">
-                            <div class="thumb">
-                                <div class="main-banner header-text">
-                                    <div class="Modern-Slider">
-                                      <div class="item">
-                                        <div class="img-fill">
-                                            <img src="/assets/images/FleurdeSel1.png" alt="">
-                                        </div>
-                                      </div>
-                                      <div class="item">
-                                        <div class="img-fill">
-                                            <img src="/assets/images/FleurdeSel2.png" alt="">
-                                        </div>
-                                      </div>
-                                      <div class="item">
-                                        <div class="img-fill">
-                                            <img src="/assets/images/FleurdeSel3.png" alt="">
-                                        </div>
-                                      </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="down-content">
-                                <h4>鹽之華法國餐廳</h4>
-                                <span>Fleur de Sel French Restaurant</span>
-                                <br></br>
-                                <p>環境舒適優雅，與精挑細選的食具相互呼應，加上服務團隊的貼心招待，構成細膩的用餐體驗。女主廚擁有三十年西餐與旅外學習經驗，菜單設計以歐陸為概念，內容按季節變更。菜色分量精巧，不僅用葡萄酒入菜，也將亞洲的香料、草本等元素融入其中，創造出有趣風味。建議請侍酒師介紹搭餐的美酒。</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="chef-item">
-                            <div class="thumb">
-                                <div class="main-banner header-text">
-                                    <div class="Modern-Slider">
-                                      <!-- Item -->
-                                      <div class="item">
-                                        <div class="img-fill">
-                                            <img src="/assets/images/DinTaiFung1.png" alt="">
-                                        </div>
-                                      </div>
-                                      <!-- // Item -->
-                                      <!-- Item -->
-                                      <div class="item">
-                                        <div class="img-fill">
-                                            <img src="/assets/images/DinTaiFung2.png" alt="">
-                                        </div>
-                                      </div>
-                                      <!-- // Item -->
-                                      <!-- Item -->
-                                      <div class="item">
-                                        <div class="img-fill">
-                                            <img src="/assets/images/DinTaiFung3.png" alt="">
-                                        </div>
-                                      </div>
-                                      <!-- // Item -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="down-content">
-                                <h4>鼎泰豐</h4>
-                                <span>Din Tai Fung</span>
-                                <br></br>
-                                <p>這所鼎泰豐旗艦店樓高四層，備有無障礙設施，為客人提供寬敞舒適的用餐環境。小籠包固然是招牌品項，但用臺灣在地食材製作的菜色也值得一試。例如以涼菜方式呈現的糖醋排骨，採豬腹脇肉、番茄乾烹煮，以特製糖醋醬翻炒至收汁，色澤紅潤晶透，相當獨特。另外可以嚐嚐甘甜潤喉的苦瓜排骨湯，以及老少咸宜的芋泥大包。</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="chef-item">
-                            <div class="thumb"> 
-                                <div class="main-banner header-text">
-                                    <div class="Modern-Slider">
-                                      <div class="item">
-                                        <div class="img-fill">
-                                            <img src="/assets/images/Chuanya1.png" alt="">
-                                        </div>
-                                      </div>
-                                      <div class="item">
-                                        <div class="img-fill">
-                                            <img src="/assets/images/Chuanya2.png" alt="">
-                                        </div>
-                                      </div>
-                                      <div class="item">
-                                        <div class="img-fill">
-                                            <img src="/assets/images/Chuanya3.png" alt="">
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="down-content">
-                                <h4>川雅</h4>
-                                <span>Chuan Ya</span>
-                                <br></br>
-                                <p>餐廳高踞46樓，整片玻璃窗將臺北101與市內景色盡收眼底。主廚擁有30年廚齡，曾赴四川取經，將烹飪精髓糅合成三款套餐，當中橫跨川菜中的官府菜乃至家常美食，精巧呈現各類味型。川雅尋味套餐讓食客自行搭配菜色，不論是工序費時的開水白菜，還是潔白如雪的龍蝦雪花雞淖，其細緻滋味均令人難以忘懷。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="showRestaurant" class="container">
+                
             </div>
         </section>
 
@@ -260,8 +159,179 @@
         <!-- Global Init -->
         <script src="/assets/js/custom.js"></script>
         <script>
-            function doubleCheck(){
-                confirm("You sure you like this restaurant more?")
+            let jsonResult = [];
+            let search = [];
+
+            //document.ready;
+            document.addEventListener('DOMContentLoaded', async function(){
+                const showRestaurant = document.getElementById('showRestaurant');
+                const apiUrl = 'http://localhost:8080/search/restaurant';//api url
+
+                const response = await fetch(apiUrl, {
+                        method: 'POST', 
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(search)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        showRestaurant.innerHTML = ''; //清空原有的載入中提示
+                        jsonResult = data.content;
+                        presentRestaurant();
+                    });
+            });
+
+            document.addEventListener('DOMContentLoaded', function(){
+                const recommendTag = document.getElementById('recommendTag');
+                const apiUrl = 'http://localhost:8080/search/popular-tags';//api url
+
+                fetch(apiUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(Data => {
+                        recommendTag.innerHTML = ''; //清空原有的載入中提示
+                        console.log(Data.content);
+                        
+                        let tagData = Data.content;
+                        const newRowDiv = document.createElement('div');
+                        newRowDiv.classList.add('row');
+                        
+                        for (i=0;i<tagData.length;i++){
+                            const colAuto = document.createElement('div');
+                            colAuto.classList.add('col-auto');
+                            colAuto.setAttribute('onclick', `searchTag('${tagData[i]}')`);
+                            colAuto.innerHTML = `<span class="suggestion-tag">
+                                    #${tagData[i]}
+                                </span>
+                            `;
+                            
+                            newRowDiv.appendChild(colAuto);
+                            recommendTag.appendChild(newRowDiv);
+                            recommendTag.style.margin = "2% 0% 2% 6%";
+                        }
+
+                    });
+            });
+
+            function presentRestaurant(){
+                const showRestaurant = document.getElementById('showRestaurant');
+                showRestaurant.innerHTML = ''; //清空原有的載入中提示
+                const newRowDiv = document.createElement('div');
+                newRowDiv.classList.add('row');
+
+                for(var i=0 ; i < jsonResult.length; i++){
+                    // if(i%3 == 0){
+                    //     const newRowDiv = document.createElement('div');
+                    //     newRowDiv.classList.add('row');
+                    //     newRowDiv.style.paddingBottom = "10px";
+                    // }
+
+                    const colDiv = document.createElement('div');
+                    colDiv.classList.add('col-lg-3');
+                    colDiv.style.paddingBottom = "20px";
+
+                    const chefItemDiv = document.createElement('div');
+                    chefItemDiv.classList.add('chef-item');
+
+                    // 創建 .thumb 區塊 (圖片輪播和覆蓋層)
+                    const thumbDiv = document.createElement('div');
+                    thumbDiv.classList.add('thumb');
+
+                    const mainBannerDiv = document.createElement('div');
+                    mainBannerDiv.classList.add('main-banner', 'header-text');
+
+                    const modernSliderDiv = document.createElement('div');
+                    modernSliderDiv.classList.add('Modern-Slider');
+
+                    // 輪播圖片
+                    jsonResult[i].images.forEach(imageUrl => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.classList.add('item');
+                        const imgFillDiv = document.createElement('div');
+                        imgFillDiv.classList.add('img-fill');
+                        const img = document.createElement('img');
+                        img.src = imageUrl;
+                        imgFillDiv.appendChild(img);
+                        itemDiv.appendChild(imgFillDiv);
+                        modernSliderDiv.appendChild(itemDiv);
+                    });
+                    
+                    mainBannerDiv.appendChild(modernSliderDiv);
+                    thumbDiv.appendChild(mainBannerDiv);
+
+                    // 創建 .down-content 區塊 (餐廳資訊)
+                    const downContentDiv = document.createElement('div');
+                    downContentDiv.classList.add('down-content');
+                    // 將餐廳的 UID 傳入 choose 函式
+                    //downContentDiv.setAttribute('onclick', `choose('${jsonResult[restCounter][i].uid}')`);
+                    const url = jsonResult[i].url;
+                    downContentDiv.addEventListener('click', function() {
+                        window.open(url, '_blank');
+                    });
+
+                    downContentDiv.innerHTML = `
+                        <h4>${jsonResult[i].name}</h4>
+                        <br><br>
+                        <p>${jsonResult[i].desc}</p>
+                    `;
+
+                    chefItemDiv.appendChild(thumbDiv);
+                    chefItemDiv.appendChild(downContentDiv);
+                    colDiv.appendChild(chefItemDiv);
+
+                    newRowDiv.appendChild(colDiv);
+                    showRestaurant.appendChild(newRowDiv);
+                }
+                
+                $('.Modern-Slider').slick({
+                    autoplay:true,
+                    autoplaySpeed:10000,
+                    speed:600,
+                    slidesToShow:1,
+                    slidesToScroll:1,
+                    pauseOnHover:true,
+                    dots:true,
+                    pauseOnDotsHover:true,
+                    cssEase:'linear',
+                    fade:true,
+                    draggable:false,
+                    prevArrow:'<button class="PrevArrow"></button>',
+                    nextArrow:'<button class="NextArrow"></button>',
+                });
+            }
+
+            async function searchTag(searchTag) {
+                const showRestaurant = document.getElementById('showRestaurant');
+                const apiUrl = 'http://localhost:8080/search/restaurant';//api url
+                search.push(searchTag);
+                const response = await fetch(apiUrl, {
+                        method: 'POST', 
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(search)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        showRestaurant.innerHTML = ''; //清空原有的載入中提示
+                        jsonResult = data.content;
+                        presentRestaurant();
+                    });
             }
         </script>
     </body>
